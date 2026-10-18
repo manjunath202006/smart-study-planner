@@ -1,0 +1,6 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Login | StudySmart</title><link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}"></head>
+<body><main class="auth-card"><h1>StudySmart</h1><h2>Student Login</h2>
+{% with messages = get_flashed_messages(with_categories=true) %}{% for category, message in messages %}<p class="message {{ category }}">{{ message }}</p>{% endfor %}{% endwith %}
+<form method="POST"><label>Email</label><input type="email" name="email" required><label>Password</label><input type="password" name="password" required><button type="submit">Login</button></form>
+<p>New student? <a href="{{ url_for('register') }}">Create an account</a></p></main></body></html>
